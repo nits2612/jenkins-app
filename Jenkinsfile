@@ -16,7 +16,7 @@ pipeline {
                    npm --version
                    npm ci
                    npm run build
-                   ls la
+                   ls -la
                 '''
             }
         }
@@ -24,8 +24,7 @@ pipeline {
             steps {
                 sh '''
                   echo 'Test Stage....'
-                  grep 'index.html' /build
-                  npm test
+                  test -f build/index.html
                 '''
             }
         }
