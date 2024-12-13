@@ -31,7 +31,7 @@ pipeline {
                             reuseNode true
                         }
                     }
-                }
+                
                     steps {
                         sh '''
                         echo 'Test Stage....'
@@ -39,7 +39,7 @@ pipeline {
                         npm test
                         '''
                     }
-            
+                }
                 stage("E2E Test") {
                     agent {
                         docker {
